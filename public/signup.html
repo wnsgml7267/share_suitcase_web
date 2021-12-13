@@ -1,0 +1,35 @@
+<form class="joinForm" action="/process/adduser" method="post">
+  <link rel="stylesheet" type="text/css" href="/css/sign.css">
+
+  <h2>회원가입</h2>
+  <div class="textForm">
+    <input name="id" type="text" class="id" placeholder="아이디">
+    </input>
+  </div>
+  <div class="textForm">
+    <input name="password" type="password" class="password" placeholder="비밀번호">
+  </div>
+   <div class="textForm">
+    <input name="passwordConfirm" type="password" class="password" placeholder="비밀번호 확인">
+  </div>
+  <div class="textForm">
+    <input name="name" type="text" class="name" placeholder="이름">
+  </div>
+   <div class="textForm">
+    <input name="email" type="text" class="email" placeholder="이메일">
+  </div>
+  <div class="textForm">
+    <input name="nickname" type="text" class="nickname" placeholder="닉네임">
+  </div>
+  <div class="textForm">
+    <input name="cellphoneNo" type="number" class="cellphoneNo" placeholder="전화번호">
+  </div>
+  <div class="textForm">
+      여권사진 첨부
+  <input type="file" id="user-profile" accept="image/*, audio/*, video/*" placeholder="여권사진">
+  </div>
+  <p>
+  <input type="submit" class="btn" value="Join"> 
+  <input type="button" class="btn" value="Cancel" onClick="location.href='login.html'" />
+  </p>
+</form>

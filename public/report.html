@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/css/reportstyle.css">
+    <title>신고하기</title>
+</head>
+<body>
+    <br><br><br><br>
+    <h2>신고하기</h2> <br>
+
+    <ul>
+        <li>
+            <label class="reg" for="id">아이디</label>
+            <input type="text" id="name">
+        </li>
+        <li>
+            <label class="reg" for="tt">제목</label>
+            <input type="text" id="tt">
+        </li>
+        <li>
+            <label class="reg" for="report_id">신고할 게시글 URL</label>
+            <textarea name="contentData" rows="3" cols="50"> </textarea>
+        </li>
+    </ul>
+
+    <select>
+        <option value="신고사유 선택">신고사유 선택</option>
+        <option value="욕설/인신공격">욕설/인신공격</option>
+        <option value="거래사기">거래사기</option>
+        <option value="같은 내용의 반복(도배)">같은 내용의 반복(도배)</option>
+        <option value="영리목적/홍보성">영리목적/홍보성</option>
+        <option value="거래파기">거래파기</option>
+        <option value="기타">기타</option>
+    </select>
+    <ul>
+        <li>
+            <label class="reg" for="id">신고사유 상세(기타)</label>
+            <textarea name="contentData" rows="10" cols="50"> </textarea>
+        </li>
+    </ul>
+    <form method="post" action="/home" class="nav-item">
+        <input type="submit" class="button" value="신고하기">
+    </form>
+
+</body></html>

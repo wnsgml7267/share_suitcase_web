@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<body>
+    <table class="nav_table">
+        <nav class="nav">
+            <link rel="stylesheet" type="text/css" href="/css/main.css">
+
+            <form method="post" action="/home" class="nav-item">
+                <input type = "submit" value = "Home" class="nav-item" name = ""/>
+            </form>
+
+            <form method="post" action="/" class="nav-item">
+                <input type = "submit" value = "수화물 공유" class="nav-item" name = ""/>
+            </form>
+            
+            <form method="post" action="/c" class="nav-item">
+                <input type = "submit" value = "채팅방" class="nav-item" name = ""/>
+            </form>
+            <a href="/public/automatch.html" method="post" class="nav-item" >자동매칭</a>
+            <a href="/public/report.html" method="post" class="nav-item" >신고하기</a>
+            <a href="/process/logout" method="post" class="nav-item" >로그아웃</a>
+            <form method="post" action="/userInfo" class="nav-item">
+                <input type = "submit" value = "사용자 : <%= user.id %>" class="nav-item" name = ""/>
+            </form>
+            <!--<a href="#" class="nav-item" >사용자 : <%= user.id %></a>-->
+            <span class="nav-indicator"></span>
+        </nav>
+    </table>
+    <table class="list_table">
+        <thead></thead>
+        <tbody>
+            <tr>
+                <td>
+                    <p style="color:#5657E5; font-size: 30px; font-family:monospace;">여행을 하고 난 후 늘어나버린 <i>짐</i>들이 처치곤란처럼 느껴졌던 적이 있으신가요?</p>
+                </td>       
+            </tr>
+            <tr>
+                <td>
+                    <p style="color:#5657E5; font-size: 30px; font-family:monospace;">또, 캐리어의 빈공간을 이용해 <i>수익</i>을 창출해볼 생각이 있으신가요?</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p style="color:#5657E5; font-size: 30px; font-family:monospace;">그럴때 <i>수하물 공유 서비스</i>를 이용해보세요!</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>

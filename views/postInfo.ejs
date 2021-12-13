@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/write.css' />
+  </head>
+  <table class="nav_table">
+    <nav class="nav">
+        <form method="post" action="/home" class="nav-item">
+            <input type = "submit" value = "Home" class="nav-item" name = ""/>
+        </form>
+        <form method="post" action="/" class="nav-item">
+            <input type = "submit" value = "수화물 공유" class="nav-item" name = ""/>
+        </form>
+        <form method="post" action="/c" class="nav-item">
+          <input type = "submit" value = "채팅방" class="nav-item" name = ""/>
+      </form>
+      <a href="/public/automatch.html" method="post" class="nav-item" >자동매칭</a>
+      <a href="/public/report.html" method="post" class="nav-item" >신고하기</a>
+      <a href="/process/logout" method="post" class="nav-item" >로그아웃</a>
+        <span class="nav-indicator"></span>
+    </nav>
+  </table>  
+
+<br><br><br><br><br><br><br><br> <h2>작성자 : <%= board.id %></h2>
+  <form action="/" method="post">
+      <div class="text">항공사</div>
+      <div class="textForm">
+          <a><%= board.airline %></a>
+      </div> <br>
+
+      <div class="text">항공편</div>
+      <div class="textForm">
+          <a><%= board.flight %></a>
+      </div> <br>
+
+      <div class="text">수하물 공유 용량</div>
+      <div class="textForm">
+          <a> <%= board.shareG %>g</a>
+      </div> <br>
+
+      <div class="text">판매 금액</div>
+      <div class="textForm">
+          <a> <%= board.salePrice %>원(g당)</a>
+      </div> <br>
+
+      <div class="text">제목</div>
+      <div class="textForm">
+          <a><%= board.title %></a>
+      </div> <br>
+
+      <div class="text">내용</div>
+      <div class="textForm">
+          <a> <%= board.contents %></a>
+      </div> <br>
+      <input type="submit" class="button" value="목록">
+  </form>
+      <form action="/comment/write" method="post">
+        <input type="text" name="id" value="<%=board._id%>" hidden>
+        댓글 : <textarea class = "ta" name="contents"></textarea>
+        <input type="submit" value="댓글 작성">
+      </form>
+      <br>
+      <div class="textForm">
+        <% if (board.comments !== null) {
+          var comment = board.comments;
+            for(var i = 0; i < board.comments.length; i++) {%>
+              <a> <%= comment[i].author %> : <%=comment[i].contents%></a>
+              <br>
+        <%}}%>
+      </div>
+      
+  
+</html>

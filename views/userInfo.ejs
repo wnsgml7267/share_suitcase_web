@@ -1,0 +1,26 @@
+<form class="joinForm" action="/process/adduser" method="post">
+    <link rel="stylesheet" type="text/css" href="/css/sign.css">
+  
+    <h2>사용자 정보</h2>
+    <div class="textForm">
+        <a>아이디 : <%= user.id %></a>
+      </input>
+    </div>
+    <div class="textForm">
+        <a>이름 : <%= user.name %></a>
+    </div>
+     <div class="textForm">
+        <a>이메일 : <%= user.email %></a>
+    </div>
+    <div class="textForm">
+        <a>닉네임 : <%= user.nickname %></a>
+    </div>
+    <div class="textForm">
+        <a>전화번호 : <%= user.cellphoneNo %></a>
+    </div>
+    <p>
+        <form method="post" action="/home" class="nav-item">
+            <input type = "submit" value = "확인" class="nav-item" name = ""/>
+        </form>
+    </p>
+  </form>

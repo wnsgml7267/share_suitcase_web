@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>채팅방</title>
+<meta name = "viewport" content="width=device-width, initial-scale = 1" />
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src = "http://code.jquery.com/jquery-1.7.1.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+	$(document).ready(function(){
+		var socket = io.connect();
+		socket.on('message',function(data){
+			var output = '';
+			output += '<div class="alert alert-info"><strong>';
+			output += data.name;
+			output += '</strong> : ';
+			output += data.message;
+			output += '</div>';
+			$(output).prependTo('#content');
+		});
+
+		socket.on('preload',function(data){
+			var output = '';
+			output += '<div class="alert alert-info"><strong>';
+			output += data.name;
+			output += '</strong> : ';
+			output += data.message;
+			output += '</div>';
+			$(output).prependTo('#content');
+		});
+
+
+		$('#button').click(function(){
+			socket.emit('message',
+			{
+				name: $('#name').val(),
+				message:$('#message').val()
+			}
+			);
+			$('#message').val('');
+		});
+
+		$('#message').keydown(function(e) {
+		    if (e.which == 13) {/* 13 == enter key@ascii */
+		        socket.emit('message',{
+					name: $('#name').val(),
+					message:$('#message').val()
+				});
+				$('#message').val('');
+		    }
+		});
+	});
+</script>
+
+</head>
+
+<body>
+	
+	<div style="width:500px;margin:50px">
+		<h1>채팅방</h1>
+		<div class="form-group">
+			<form method="post" action="/home" class="">
+                <input type = "submit" value = "Home" class="button3" style="width:20%" name = ""/>
+            </form>
+		    <input type="text" class="form-control" id="name" placeholder="User Name"/>
+	  	</div>
+	  	<div class="form-group">
+		    <input type="text" class="form-control" id="message" placeholder="Message"/>
+	    </div>
+	    <div class="form-group">
+	    	<button id = 'button' type="button" class="button2" style="width:30%">전송</button>
+	    </div>
+	    <div id="content">
+	    <div>
+  	</div>
+</body>
+</html>
+<style>
+	body {
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0 20px;
+ 
+		background-image: #34495e;
+		background-image: url("https://i.ibb.co/jrMfnTb/background.png");
+		background-repeat: no-repeat;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		height: 100vh;
+		text-align: center;
+		
+	}
+	.button2{
+    position:relative;
+    left:50%;
+    transform: translateX(-50%);
+    color:white;
+    font-size:16px;
+    font-weight: bold;
+    cursor:pointer;
+    transition: 0.4s;
+    display:inline;
+    margin-bottom:5px;
+    width:130px;
+    height:40px;
+    background-image: linear-gradient(135deg, #80E5EC, #6C5DE7);
+	}
+	.button3{
+    position:relative;
+    left:10%;
+    transform: translateX(-50%);
+    color:white;
+    font-size:16px;
+    font-weight: bold;
+    cursor:pointer;
+    transition: 0.4s;
+    display:inline;
+    margin-bottom:5px;
+    width:130px;
+    height:40px;
+    background-image: linear-gradient(135deg, #80E5EC, #6C5DE7);
+	}
+</style>

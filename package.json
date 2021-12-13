@@ -1,0 +1,24 @@
+{
+  "name": "databaseexample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1046.0",
+    "dialog": "^0.3.1",
+    "ejs": "^3.1.6",
+    "jquery": "^3.6.0",
+    "mongoose": "^6.1.0",
+    "multer": "^1.4.4",
+    "multer-s3": "^2.10.0",
+    "node-popup": "^0.1.14",
+    "redis": "^4.0.0",
+    "socket.io": "^1.7.4"
+  }
+}

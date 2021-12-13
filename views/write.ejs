@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/write.css' />
+  </head>
+    <table class="nav_table">
+        <nav class="nav">
+            <form method="post" action="/home" class="nav-item">
+                <input type = "submit" value = "Home" class="nav-item" name = ""/>
+            </form>
+            <form method="post" action="/" class="nav-item">
+                <input type = "submit" value = "수화물 공유" class="nav-item" name = ""/>
+            </form>
+            <form method="post" action="/c" class="nav-item">
+                <input type = "submit" value = "채팅방" class="nav-item" name = ""/>
+            </form>
+            <a href="/public/automatch.html" method="post" class="nav-item" >자동매칭</a>
+            <a href="/public/report.html" method="post" class="nav-item" >신고하기</a>
+            <a href="/process/logout" method="post" class="nav-item" >로그아웃</a>
+            <span class="nav-indicator"></span>
+        </nav>
+    </table>  
+    
+    <br><br><br><br><br><br><br><br> <h2>수하물 공유 등록</h2><br>
+    <form action="/board/write" method="post">
+        <div class="text">항공사 입력</div>
+        <div class="textForm">
+            <input name="airline" type="text">
+        </div> <br>
+
+        <div class="text">항공편</div>
+        <div class="textForm">
+            <input name="flight" type="text">
+        </div> <br>
+
+        <div class="text">수하물 공유 용량</div>
+        <div class="textForm">
+            <input name="shareG" type="text" id="shareG" placeholder="g 단위">
+        </div> <br>
+
+        <div class="text">판매 금액</div>
+        <div class="textForm">
+            <input name="salePrice" type="text" placeholder="1g당 가격">
+        </div> <br>
+
+        <div class="text">제목</div>
+        <div class="textForm">
+            <input name="title" type="text">
+        </div> <br>
+
+        <div class="text">내용</div>
+        <div class="textForm">
+            <textarea name="contents" rows="7" cols="70"> </textarea>
+        </div> <br>
+        <input type="submit" class="button" value="작성 완료">
+    </form>
+    
+</html>

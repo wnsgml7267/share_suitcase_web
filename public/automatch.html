@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="/css/automatch.css">
+    </head>
+
+    <br><br><br><br> <h2>수하물 공유 등록</h2> <br>
+
+    <div class="text">잔여 공간 공유 또는 대여</div>
+    <input type="radio" name="member" value="yes" checked>공유 &nbsp; &nbsp;
+	<input type="radio" name="member" value="no">대여 <br><br>
+
+    <div class="text">항공사</div>
+    <div class="textForm">
+        <input name="airlineData" type="text">
+    </div> <br>
+
+    <div class="text">항공편</div>
+    <div class="textForm">
+        <input name="flightData" type="text">
+    </div> <br>
+
+    <div class="text">용량</div>
+    <div class="textForm">
+        <input name="amountData" type="text" id="amount" placeholder="g 단위">
+    </div> <br>
+    <form method="post" action="/home" class="nav-item">
+    <input type="submit" class="button" value="매칭">
+    </form>
+</html>

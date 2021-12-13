@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" type="text/css" href="/css/posting.css">
+<head>
+    <meta charset="UTF-8">
+    <title>게시판</title>
+</head>
+
+<body>
+    <table class="nav_table">
+        <nav class="nav">
+            <form method="post" action="/home" class="nav-item">
+                <input type = "submit" value = "Home" class="nav-item" name = ""/>
+            </form>
+            <form method="post" action="/" class="nav-item">
+                <input type = "submit" value = "수화물 공유" class="nav-item" name = ""/>
+            </form>
+            <form method="post" action="/c" class="nav-item">
+                <input type = "submit" value = "채팅방" class="nav-item" name = ""/>
+            </form>
+            <a href="/public/report.html" method="post" class="nav-item" >신고하기</a>
+            <a href="/process/logout" method="post" class="nav-item" >로그아웃</a>
+            <span class="nav-indicator"></span>
+        </nav>
+    </table>
+    
+    <select>
+        <option value="항공사 선택">항공사선택</option>
+        <option value="대한항공">대한항공</option>
+        <option value="아시아나항공">아시아나항공</option>
+        <option value="에어부산">에어부산</option>
+    </select>
+    <select>
+        <option value="항공편 선택">항공편선택</option>
+        <option value="프라하">프라하</option>
+        <option value="빈">빈</option>
+        <option value="부다페스트">부다페스트</option>
+    </select>
+    <select>
+        <option value="판매 목록">공유목록</option>
+        <option value="구매 목록">대여목록</option>
+    </select>
+
+    <table class="list_table">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>공유용량</th>
+                <th>판매금액</th>
+                <th>결제</th>
+                <th>작성일</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if (board !== null){ %>
+                <%for(var i = 0; i < board.length; i++) { %>
+                    <tr>
+                        
+                        <td>
+                            <h3><%= i+1 %></h3></a>
+                        </td>
+                        <td>
+                            <!--게시글 제목 표시-->
+                            <a href="/board/<%= board[i]._id%>"><%=board[i].title%></a>
+                        </td>
+                        <td>
+                            <a><%= board[i].id %></a>
+                        </td>
+                        <td>
+                            <a><%= board[i].shareG %>g</a>
+                        </td>
+                        <td><%= board[i].salePrice %>원(1g당)</td>
+                        <td><input type="submit" class="button" value="결제"></td>
+                        <td>2021-12-13</td>
+                    </tr>
+            <%  }} %>
+            
+            <div class="search">
+                <input type="text" placeholder="검색어를 입력해주세요.">
+            </div>
+            <div class="button">
+                <button>검색</button>
+            </div>
+        </tbody>
+    </table>
+    
+    <ul class="pagination">
+        <li><a href="#">&laquo;</a></li>
+        <li><a href="#">1</a></li>
+        <li><a href="#">&laquo;</a></li>
+        <li><a href="write" class="button2">글쓰기</a></li>
+        
+    </ul>
+</body>
+</html>
+
